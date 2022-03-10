@@ -1,0 +1,54 @@
+{
+    "name": "@shuttle/theme",
+    "version": "1.0.0",
+    "description": "VitePress theme for Shuttle documentation.",
+    "main": "src/index.ts",
+    "exports": {
+        ".": "./src/index.ts",
+        "./config": "./src/vitepress/config/baseConfig.js",
+        "./highlight": "./src/vitepress/config/highlight.js"
+    },
+    "files": [
+        "src",
+        "types"
+    ],
+    "scripts": {
+        "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+        "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+        "type": "tsc --noEmit",
+        "test": "yarn lint && yarn type",
+        "dev": "vitepress dev demo",
+        "demo-build": "vitepress build demo",
+        "serve": "yarn demo-build && vitepress serve demo --port 5001"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shuttle-npm/vitepress-theme.git"
+    },
+    "keywords": [
+        "shuttle",
+        "design-system"
+    ],
+    "author": "Eben Roux",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/shuttle-npm/vitepress-theme/issues"
+    },
+    "homepage": "https://github.com/shuttle-npm/vitepress-theme",
+    "devDependencies": {
+        "@types/body-scroll-lock": "^2.6.1",
+        "@types/estree": "^0.0.48",
+        "prettier": "^2.4.1",
+        "typescript": "~4.3.5",
+        "vitepress": "^0.22.3",
+        "vue": "^3.2.26"
+    },
+    "dependencies": {
+        "@docsearch/css": "^3.0.0-alpha.41",
+        "@docsearch/js": "^3.0.0-alpha.41",
+        "@vueuse/core": "^7.3.0",
+        "body-scroll-lock": "^3.1.5",
+        "normalize.css": "^8.0.1",
+        "shiki": "^0.9.15"
+    }
+}
