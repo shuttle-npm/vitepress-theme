@@ -23,8 +23,6 @@ module.exports = (async () => {
     description: 'Shuttle - Stuff',
 
     themeConfig: {
-      logo: '/img/shuttle.png',
-
       algolia: {
         indexName: 'shuttle-identifier',
         appId: '',

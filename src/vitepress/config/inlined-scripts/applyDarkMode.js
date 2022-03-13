@@ -1,5 +1,5 @@
 ;(() => {
-  const saved = localStorage.getItem('vue-theme-appearance')
+  const saved = localStorage.getItem('shuttle-theme-appearance')
   if (
     !saved || saved === 'auto'
       ? window.matchMedia(`(prefers-color-scheme: dark)`).matches
