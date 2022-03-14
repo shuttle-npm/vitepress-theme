@@ -22,21 +22,23 @@ const handleClick = ({ target: el }: Event) => {
   const heading = document.querySelector(id) as HTMLAnchorElement
   heading?.focus()
 }
+
+const resolvedHeaders = computed(() => {
+    return resolveHeaders(filteredHeaders);
+})
 </script>
 
 <template>
   <div class="VPContentDocOutline" ref="container">
     <div class="outline-marker" ref="marker" />
-    <div class="outline-title">On this page</div>
+    <div class="outline-title" v-if="resolveHeaders(filteredHeaders).length">On this page</div>
     <nav aria-labelledby="doc-outline-aria-label">
       <span id="doc-outline-aria-label" class="visually-hidden"
         >Table of Contents for current page</span
       >
       <ul class="root">
         <li
-          v-for="{ text, link, children, hidden } in resolveHeaders(
-            filteredHeaders
-          )"
+          v-for="{ text, link, children, hidden } in resolveHeaders(filteredHeaders)"
           v-show="!hidden"
         >
           <a class="outline-link" :href="link" @click="handleClick">{{
