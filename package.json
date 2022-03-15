@@ -52,13 +52,13 @@
         "shiki": "^0.9.15"
     },
     "pnpm": {
-      "peerDependencyRules": {
-        "ignoreMissing": [
-          "@algolia/client-search",
-          "react",
-          "react-dom",
-          "@types/react"
-        ]
-      }
+        "peerDependencyRules": {
+            "ignoreMissing": [
+                "@algolia/client-search",
+                "react",
+                "react-dom",
+                "@types/react"
+            ]
+        }
     }
 }
