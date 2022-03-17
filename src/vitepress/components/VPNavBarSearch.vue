@@ -15,7 +15,7 @@ const loaded = ref(false)
 const metaKey = ref()
 
 onMounted(() => {
-  if(!theme.algolia) {
+  if(!theme.value.algolia) {
     return;
   }
   // meta key detect (same logic as in @docsearch/js)

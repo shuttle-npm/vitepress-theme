@@ -1,7 +1,7 @@
 <script setup>
-import VTIconShuttle from '../../core/components/icons/VTIconShuttle.vue';
-import { useData } from 'vitepress';
-const { site} = useData()
+import VTIconShuttle from '../../core/components/icons/VTIconShuttle.vue'
+import { useData } from 'vitepress'
+const { site } = useData()
 </script>
 <template>
   <a class="VPNavBarTitle" :href="site.base ?? '/'">

@@ -1,6 +1,6 @@
 {
     "name": "shuttle-theme",
-    "version": "1.0.3",
+    "version": "1.0.9",
     "description": "VitePress theme for Shuttle documentation.",
     "main": "src/index.ts",
     "exports": {

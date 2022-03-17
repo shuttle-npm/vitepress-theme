@@ -18,9 +18,15 @@ module.exports = (async () => {
       }
     },
 
+    base: '/test/',
     lang: 'en-US',
     title: 'Shuttle',
     description: 'Shuttle - Stuff',
+
+    head: [
+        ...base.head,
+        ['link', { rel: "shortcut icon", href: "/test/favicon.ico" }]
+    ],
 
     themeConfig: {
       algolia: {
