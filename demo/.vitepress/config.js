@@ -20,8 +20,8 @@ module.exports = (async () => {
 
     base: '/test/',
     lang: 'en-US',
-    title: 'Shuttle',
-    description: 'Shuttle - Stuff',
+    title: 'Shuttle.Theme',
+    description: 'Shuttle Theme',
 
     head: [
         ...base.head,

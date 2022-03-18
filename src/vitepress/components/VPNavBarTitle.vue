@@ -6,7 +6,7 @@ const { site } = useData()
 <template>
   <a class="VPNavBarTitle" :href="site.base ?? '/'">
     <VTIconShuttle class="logo" />
-    <span class="text">Shuttle</span>
+    <span class="text">{{site.title || "Shuttle"}}</span>
   </a>
 </template>
 
