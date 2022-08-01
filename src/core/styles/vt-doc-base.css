@@ -92,14 +92,14 @@
   margin-bottom: 1.2em;
 }
 
-.vt-doc a {
+.vt-doc a:not(.vt-doc-ignore) {
   font-weight: 500;
   color: var(--vt-c-brand);
   transition: color 0.25s;
   text-decoration-style: dotted;
 }
 
-.vt-doc a:hover {
+.vt-doc a:hover:not(.vt-doc-ignore) {
   color: var(--vt-c-brand-highlight);
 }
 
@@ -107,24 +107,24 @@
   font-weight: 600;
 }
 
-.vt-doc table {
+.vt-doc table:not(.vt-doc-ignore) {
   display: block;
   border-collapse: collapse;
   margin: 1rem 0;
   overflow-x: auto;
 }
 
-.vt-doc tr {
+.vt-doc tr:not(.vt-doc-ignore) {
   border-top: 1px solid var(--vt-c-divider);
   transition: background-color 0.5s;
 }
 
-.vt-doc tr:nth-child(2n) {
+.vt-doc tr:nth-child(2n):not(.vt-doc-ignore) {
   background-color: var(--vt-c-bg-soft);
 }
 
-.vt-doc th,
-.vt-doc td {
+.vt-doc th:not(.vt-doc-ignore),
+.vt-doc td:not(.vt-doc-ignore) {
   border: 1px solid var(--vt-c-divider);
   padding: 0.6em 1em;
 }
