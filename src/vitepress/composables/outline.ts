@@ -4,7 +4,6 @@ import { useMediaQuery } from '@vueuse/core'
 import { MenuItemWithLink } from '../../core'
 
 interface HeaderWithChildren extends Header {
-  children?: Header[]
   hidden?: boolean
 }
 
@@ -13,31 +12,17 @@ interface MenuItemWithLinkAndChildren extends MenuItemWithLink {
   hidden?: boolean
 }
 
-export function resolveHeaders(headers: HeaderWithChildren[]) {
-  return mapHeaders(groupHeaders(headers))
-}
-
-function groupHeaders(headers: Header[]): HeaderWithChildren[] {
-  headers = headers.map((h) => Object.assign({}, h))
-  let lastH2: HeaderWithChildren | undefined
-  for (const h of headers) {
-    if (h.level === 2) {
-      lastH2 = h
-    } else if (lastH2 && h.level <= 3) {
-      ;(lastH2.children || (lastH2.children = [])).push(h)
-    }
-  }
-  return headers.filter((h) => h.level === 2)
-}
-
-function mapHeaders(
-  headers: HeaderWithChildren[]
+export function resolveHeaders(
+  headers: HeaderWithChildren[],
+  filter?: (h: HeaderWithChildren) => boolean
 ): MenuItemWithLinkAndChildren[] {
   return headers.map((header) => ({
     text: header.title,
-    link: `#${header.slug}`,
-    children: header.children ? mapHeaders(header.children) : undefined,
-    hidden: header.hidden
+    link: header.link,
+    children: header.children?.length
+      ? resolveHeaders(header.children, filter)
+      : undefined,
+    hidden: filter ? !filter(header) : false
   }))
 }
 
@@ -60,7 +45,9 @@ export function useActiveAnchor(
     const anchors = [].slice
       .call(document.querySelectorAll('.content .header-anchor'))
       .filter((anchor: HTMLAnchorElement) =>
-        links.some((link) => link.hash === anchor.hash)
+        links.some(
+          (link) => link.hash === anchor.hash && anchor.offsetParent !== null
+        )
       ) as HTMLAnchorElement[]
 
     // page bottom - highlight last one
