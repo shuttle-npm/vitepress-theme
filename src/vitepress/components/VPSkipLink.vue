@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
 import { useRoute } from 'vitepress'
+import { useConfig } from '../composables/config'
 
+const { config } = useConfig()
 const route = useRoute()
 const backToTop = ref()
 
@@ -34,9 +36,8 @@ const focusOnTargetAnchor = ({ target }: Event) => {
     href="#VPContent"
     class="VPSkipLink visually-hidden"
     @click="focusOnTargetAnchor"
+    >{{ config.i18n?.ariaSkipToContent ?? 'Skip to content' }}</a
   >
-    Skip to content
-  </a>
 </template>
 
 <style scoped>
@@ -48,13 +49,13 @@ const focusOnTargetAnchor = ({ target }: Event) => {
   font-size: 0.9em;
   font-weight: bold;
   text-decoration: none;
-  color: var(--vt-c-orange);
+  color: var(--vt-c-green);
   box-shadow: var(--vt-shadow-3);
   background-color: var(--vt-c-bg);
   border-radius: 8px;
 }
 .dark .VPSkipLink {
-  color: var(--vt-c-orange);
+  color: var(--vt-c-green);
 }
 .VPSkipLink:focus {
   height: auto;

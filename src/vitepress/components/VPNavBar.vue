@@ -15,8 +15,11 @@ defineProps<{
 <template>
   <div class="VPNavBar">
     <div class="container">
-      <VPNavBarTitle />
-
+      <VPNavBarTitle>
+        <template #navbar-title>
+          <slot name="navbar-title" />
+        </template>
+      </VPNavBarTitle>
       <div class="content">
         <VPNavBarSearch class="search" />
         <VPNavBarMenu class="menu" />
@@ -40,6 +43,7 @@ defineProps<{
   padding: 0 12px 0 24px;
   height: var(--vt-nav-height);
   background-color: var(--vt-c-bg);
+  white-space: nowrap;
   transition: border-color 0.5s, background-color 0.5s;
 }
 

@@ -8,7 +8,6 @@ import VPNotFound from './VPNotFound.vue'
 const route = useRoute()
 const { frontmatter } = useData()
 const { hasSidebar } = useSidebar()
-
 </script>
 
 <template>
