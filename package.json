@@ -36,20 +36,20 @@
     },
     "homepage": "https://github.com/shuttle-npm/vitepress-theme",
     "devDependencies": {
-        "@types/body-scroll-lock": "^2.6.1",
-        "@types/estree": "^0.0.48",
-        "prettier": "^2.4.1",
-        "typescript": "~4.3.5",
-        "vitepress": "^0.22.3",
-        "vue": "^3.2.26"
+        "@types/body-scroll-lock": "^3.1.0",
+        "@types/estree": "^1.0.0",
+        "prettier": "^2.7.1",
+        "typescript": "^4.8.2",
+        "vitepress": "^1.0.0-alpha.13",
+        "vue": "^3.2.38"
     },
     "dependencies": {
-        "@docsearch/css": "^3.0.0-alpha.41",
-        "@docsearch/js": "^3.0.0-alpha.41",
-        "@vueuse/core": "^7.3.0",
+        "@docsearch/css": "^3.2.1",
+        "@docsearch/js": "^3.2.1",
+        "@vueuse/core": "^9.1.1",
         "body-scroll-lock": "^3.1.5",
         "normalize.css": "^8.0.1",
-        "shiki": "^0.9.15"
+        "shiki": "^0.11.1"
     },
     "pnpm": {
         "peerDependencyRules": {
