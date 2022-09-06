@@ -1,15 +1,15 @@
 <script lang="ts" setup>
     import VTIconShuttle from '../../core/components/icons/VTIconShuttle.vue';
-    import { useConfig } from '../composables/config'
+    import { useData } from 'vitepress'
    
-    const { config } = useConfig()
+    const { site } = useData()
 </script>
 
 <template>
   <a class="VPNavBarTitle" href="/">
     <slot name="navbar-title">
       <VTIconShuttle class="logo" />
-      <span class="text">{{config.title || 'Shuttle'}}</span>
+      <span class="text">{{site.title || 'Shuttle'}}</span>
     </slot>
   </a>
 </template>
