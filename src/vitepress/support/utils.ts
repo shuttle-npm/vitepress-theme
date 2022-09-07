@@ -17,7 +17,7 @@ export function normalizeLink(url: string): string {
   if (isExternal(url)) {
     return url
   }
-  const { pathname, search, hash } = new URL(url, 'http://vuejs.org')
+  const { pathname, search, hash } = new URL(url, window.location.origin)
   return withBase(
     pathname.endsWith('/') || pathname.endsWith('.html')
       ? url
@@ -41,11 +41,11 @@ export function isActive(
   if (matchPath === undefined) {
     return false
   }
-  currentPath = normalize(`/${currentPath}`)
+  currentPath = normalizeLink(normalize(`/${currentPath}`))
   if (asRegex) {
     return new RegExp(matchPath).test(currentPath)
   } else {
-    if (normalize(matchPath) !== currentPath) {
+    if (matchPath !== currentPath) {
       return false
     }
     const hashMatch = matchPath.match(hashRE)
