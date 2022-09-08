@@ -17,7 +17,7 @@ export function normalizeLink(url: string): string {
   if (isExternal(url)) {
     return url
   }
-  const { pathname, search, hash } = new URL(url, window.location.origin)
+  const { pathname, search, hash } = new URL(url, 'http://origin')
   return withBase(
     pathname.endsWith('/') || pathname.endsWith('.html')
       ? url
