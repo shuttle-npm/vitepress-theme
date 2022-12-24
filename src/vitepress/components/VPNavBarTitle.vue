@@ -6,7 +6,7 @@
 </script>
 
 <template>
-  <a class="VPNavBarTitle" href="/">
+  <a class="VPNavBarTitle" :href="site.base || '/'">
     <slot name="navbar-title">
       <VTIconShuttle class="logo" />
       <span class="text">{{site.title || 'Shuttle'}}</span>
